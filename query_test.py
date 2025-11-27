@@ -13,8 +13,8 @@ if __name__ == '__main__':
     unclosed_visits = Visit.objects.filter(leaved_at=None)
 
     for visit in unclosed_visits:
-        entered_at_local = localtime(visit.entered_at)  # Переводим время в Москву
-        time_spent = timezone.now() - visit.entered_at  # Сколько прошло времени
+        entered_at_local = localtime(visit.entered_at) 
+        time_spent = timezone.now() - visit.entered_at  
 
         print(f'Посетитель: {visit.passcard.owner_name}')
         print(f'Зашёл в хранилище: {entered_at_local}')
